@@ -8,6 +8,7 @@ A4: OpenBIM Champion
 Target user of this tool is a Level 2 OpenBIM Analyst or Modeller.  It can also be used by anyone who is interested in sustainability of the designed building!
 > Note: For further information about the roles please see [https://timmcginley.github.io/](https://timmcginley.github.io/41934/Roles/).
 
+## Prerequsities
 1. **Python Installation:** Ensure you have Python installed on your system. You can download Python from [python.org](https://www.python.org/downloads/).
 2. **Microsoft Excel Installation:** Ensure you have Microsoft Excel installed on your system. You can download Microsoft Excel from [microsoft.com](https://www.microsoft.com/en-us/microsoft-365/excel).
 3. **Required Python Packages:** Install the required Python packages using the following command in the Command Prompt app:
