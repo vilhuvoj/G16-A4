@@ -359,7 +359,10 @@ for wall in model.by_type("IfcWall"):
     except TypeError:
         print("TypeError")
 
-# Write the header row to the worksheets
+```
+
+14. Writing data to Excel spreadsheet
+```bash
 ws_slabs.cell(row=1, column=1).value = 'Material Name'
 ws_slabs.cell(row=1, column=2).value = 'Volume'
 ws_slabs.cell(row=1, column=3).value = 'Unit'
@@ -378,10 +381,7 @@ ws_walls.cell(row=1, column=6).value = 'Weight'
 ws_walls.cell(row=1, column=7).value = 'Unit'
 ws_walls.cell(row=1, column=8).value = 'IPCC2021 Climate change'
 ws_walls.cell(row=1, column=9).value = 'Unit'
-```
 
-14. Writing data to Excel spreadsheet
-```bash
 row = 2
 for slab_material_names, slab_material_volumes, slab_material_densities, slab_material_weight, slab_total_emissions, slab_CO2_unit in zip(slab_material_names, slab_material_volumes, slab_material_densities, slab_material_weight, slab_total_emissions,slab_CO2_unit):
     ws_slabs.cell(row=row, column=1).value = slab_material_names #Names
