@@ -71,7 +71,7 @@ Target user of this tool is a Level 2 OpenBIM Analyst or Modeller.  It can also 
 
 # **How does the code work?**
 
-## Importing Libraries
+1. Importing Libraries
 ```bash
 from pathlib import Path
 import ifcopenshell
@@ -80,7 +80,7 @@ import ifcopenshell.api
 import openpyxl
 from openpyxl import load_workbook
 ```
-  ## Opening the IFC Model
+  2. Opening the IFC Model
 ```bash
 modelname = "G16_Skylab_Model"
 try:
@@ -95,11 +95,11 @@ except OSError:
     except OSError:
         print(f"ERROR: please check your model folder : {model_url} does not exist")
 ```
- ## Opening the Excel file
+ 3. Opening the Excel file
  ```bash
 wb = openpyxl.Workbook()
 ```
-## Loading the Excel file
+4. Loading the Excel file
 ```bash
 excel_densities = load_workbook("List_of_densities.xlsx")
 sheet_densities = excel_densities['Sheet1']
@@ -117,12 +117,12 @@ ecoinvent_numbers = [temp[x].value for x in range(len(temp))]
 temp = ecoinvent["N"]
 ecoinvent_IPCC2021 = [temp[x].value for x in range(len(temp))]
 ```
- ## Creating two worksheets
+ 5. Creating two worksheets
 ```bash
 ws_slabs = wb.create_sheet('Slabs')
 ws_walls = wb.create_sheet('Walls')
 ```
- ## Calculating slab volumes
+ 6. Calculating slab volumes
 ```bash
 lab_material_names =[]
 slab_material_volumes = []
@@ -145,7 +145,7 @@ for Slab in model.by_type("IfcSlab"):
     else:
         print("Slab has no Name")
 ```
-## Adding slab material densities
+7. Adding slab material densities
 ```bash
 slab_material_densities = [0] * len(slab_material_names)
 for i in range(len(slab_material_names)):
@@ -157,7 +157,7 @@ for i in range(len(slab_material_names)):
     except ValueError:
         slab_material_densities[i] = "Material name not found in densities, or letters found in density" 
 ```
-## Calculating slab weights
+8. Calculating slab weights
 ```bash
 slab_material_weight = []
 for i in range(len(slab_material_names)):
@@ -167,7 +167,7 @@ for i in range(len(slab_material_names)):
         slab_material_weight.append("Weight cannot be calculated")
 ```
 
-## Calculating total slab emissions
+9. Calculating total slab emissions
 ```bash
 slab_emission = [0] * len(slab_material_names)
 slab_total_emissions = []
@@ -237,7 +237,7 @@ for Slab in model.by_type("IfcSlab"):
     except TypeError:
         print("TypeError")
 ```
-## Calculating wall volumes
+10. Calculating wall volumes
 ```bash
 all_material_names =[]
 wall_material_volumes = []
@@ -261,7 +261,7 @@ for Wall in model.by_type("IfcWall"):
     else:
         print("Wall has no Name")
 ```
-## Adding wall material densities
+11. Adding wall material densities
 ```bash
 wall_material_densities = [0] *len(wall_material_names)
 for i in range(len(wall_material_names)):
@@ -273,7 +273,7 @@ for i in range(len(wall_material_names)):
     except ValueError:
         wall_material_densities[i] = "Material name not found in densities, or letters found in density" 
 ```
-## Calculating wall weights
+12. Calculating wall weights
 ```bash
 wall_material_weight = []
 for i in range(len(wall_material_names)):
@@ -282,7 +282,7 @@ for i in range(len(wall_material_names)):
     except TypeError:
         wall_material_weight.append("Weight cannot be calculated")
 ```
-## Calculating total wall emissions
+13. Calculating total wall emissions
 ```bash
 all_emission = [0] * len(wall_material_names)
 wall_total_emissions = []
@@ -380,7 +380,7 @@ ws_walls.cell(row=1, column=8).value = 'IPCC2021 Climate change'
 ws_walls.cell(row=1, column=9).value = 'Unit'
 ```
 
-## Writing data to Excel spreadsheet
+14. Writing data to Excel spreadsheet
 ```bash
 row = 2
 for slab_material_names, slab_material_volumes, slab_material_densities, slab_material_weight, slab_total_emissions, slab_CO2_unit in zip(slab_material_names, slab_material_volumes, slab_material_densities, slab_material_weight, slab_total_emissions,slab_CO2_unit):
@@ -402,16 +402,16 @@ for wall_material_names, wall_material_volumes, wall_material_densities, wall_ma
     ws_walls.cell(row=row, column=9).value = wall_CO2_unit
     row += 1
 ```
-## Saving the Excel file
+15. Saving the Excel file
 ```bash
 wb.save('material_quantities.xlsx')
 ```
 
-## Saving the modified IFC Model
+16. Saving the modified IFC Model
 ```bash
 model.write(r'C:\Users\madsf\OneDrive\Skrivebord\Advanced BIM\Model/G16_Skylab_Modified.ifc')
 ```
-## Printing a completion message
+17. Printing a completion message
 ```bash
 print("Operation Complete")
 ```
