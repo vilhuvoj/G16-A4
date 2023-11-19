@@ -2,6 +2,20 @@
 
 A4: OpenBIM Champion
 
+# Description of the tool
+A python script was designed to perform an environmental impact assessment on a Building Information Model represented in the Industry Foundation Classes (IFC) format. The code begins by methodically scrutinizing the building model, where it categorizes materials into distinct categories, such as "Slabs" and "Walls," and proceeds to calculate their respective volumes. Following this, the code enhances the IFC model by incorporating material densities and corresponding CO2-equivalents per kilogram of material, sourced from a preexisting database stored in a Microsoft Excel file. Subsequently, the script computes the total weights of all elements and further derives CO2-equivalents for each element. These computed results are methodically structured, documented, and stored in an Excel file. This serves as a pivotal resource for conducting in-depth LCA analyses, allowing for a thorough assessment of the project's environmental impact and sustainability, with a primary focus on material utilization.
+
+## Business value of the tool
+- **Efficiency and Time Savings:** The tool streamlines the process of extracting material and environmental data from the BIM model, automating what would otherwise be a time-consuming and error-prone task. This increased efficiency can save significant time and resources for your company.
+- **Data Accuracy:** By automating data extraction and calculations, the tool reduces the risk of manual errors and ensures the accuracy of the environmental impact assessments. This can be crucial for decision-making in construction projects and resource management.
+- **Sustainability Compliance:** The tool supports your business in adhering to sustainability and environmental regulations. It helps in monitoring and managing the environmental impact of construction projects, which is essential for compliance and reputation management.
+- **Competitive Advantage:** Demonstrating a commitment to sustainability and environmentally responsible practices can provide your business with a competitive edge. Clients and partners increasingly value environmentally conscious approaches, which can open up new opportunities and partnerships.
+
+## Societal value of the tool
+- **Environmental Impact Reduction:** By accurately quantifying the environmental impact of construction projects, the tool contributes to reducing the carbon footprint of the built environment. This benefits society by mitigating the negative effects of construction on the environment, such as, in this case, greenhouse gas emissions.
+- **Transparency and Accountability:** The tool fosters transparency in construction projects by providing data on material usage and environmental impact. This transparency can lead to greater accountability in the construction industry, encouraging responsible practices.
+- **Resource Conservation:** The tool promotes the efficient use of materials, which not only reduces waste but also contributes to the sustainable use of natural resources. This aligns with broader societal goals of resource conservation and sustainable development.
+
 # How to use the developed code?
 
 ## Target user
@@ -401,3 +415,5 @@ model.write(r'C:\Users\madsf\OneDrive\Skrivebord\Advanced BIM\Model/G16_Skylab_M
 ```bash
 print("Operation Complete")
 ```
+
+> Note: You can also find a BPMN diagram describing the code saved as a .svg file in `img` folder.
