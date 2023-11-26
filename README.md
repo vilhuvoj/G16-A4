@@ -2,6 +2,14 @@
 
 A4: OpenBIM Champion
 
+# Video tutorial
+<div style="position:relative;width:fit-content;height:fit-content;">
+            <a style="position:absolute;top:20px;right:1rem;opacity:0.8;" href="https://clipchamp.com/watch/qOIBnsGQEKl?utm_source=embed&utm_medium=embed&utm_campaign=watch">
+                <img loading="lazy" style="height:22px;" src="https://clipchamp.com/e.svg" alt="Made with Clipchamp" />
+            </a>
+            <iframe allow="autoplay;" allowfullscreen style="border:none" src="https://clipchamp.com/watch/qOIBnsGQEKl/embed" width="640" height="360"></iframe>
+          </div>
+
 # Description of the tool
 A python script was designed to perform an environmental impact assessment on a Building Information Model represented in the Industry Foundation Classes (IFC) format. The code begins by methodically scrutinizing the building model, where it categorizes materials into distinct categories, such as "Slabs" and "Walls," and proceeds to calculate their respective volumes. Following this, the code enhances the IFC model by incorporating material densities and corresponding CO2-equivalents per kilogram of material, sourced from a preexisting database stored in a Microsoft Excel file. Subsequently, the script computes the total weights of all elements and further derives CO2-equivalents for each element. These computed results are methodically structured, documented, and stored in an Excel file. This serves as a pivotal resource for conducting in-depth LCA analyses, allowing for a thorough assessment of the project's environmental impact and sustainability, with a primary focus on material utilization.
 
