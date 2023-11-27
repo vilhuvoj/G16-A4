@@ -55,18 +55,20 @@ Target user of this tool is a Level 2 OpenBIM Analyst or Modeller.  It can also 
    - Additionally, include 'Ecoinvent' tab with the following columns:
      - Column B: **Ecoinvent Process Codes** - Ecoinvent Material Process Codes.
      - Column N: **Ecoinvent IPCC2021** - Global warming potential in kg CO2-eq of the selected materials.
+   > Note: You can find our Excel input file [here](https://github.com/vilhuvoj/G16-A4/blob/main/input/List_of_densities.xlsx).
 
-3. **Changing the output location and name:**
+4. **Changing the output location and name:**
    - To change the output location of the Excel file, you have to change the *C:\Users\...\Model* in the main.py code on line 318: `model.write(r'C:\Users\...\Model/Name_of_your_output.ifc')`
    - You can change the name of the output, you have to change the *Name_of_your_output.ifc* in the main.py code on line 318: `model.write(r'C:\Users\...\Model/Name_of_your_output.ifc')`
 
-4. **Run the script:**
+5. **Run the script:**
+   - You can download the script [here](https://github.com/vilhuvoj/G16-A4/blob/main/main.py)
 
-5. **Output:**
+6. **Output:**
    - The script will generate an Excel file named material_quantities.xlsx containing the environmental impact assessment results.
    - A modified version of the original IFC model, with additional environmental information, will be saved as G16_Skylab_Modified.ifc (or as *Name_of_your_output* if changed before).
 
-6. **Troubleshooting:**
+7. **Troubleshooting:**
    - If the script encounters any issues, it will print error messages to the console. Review these messages to identify and resolve any problems.
    - Ensure that all file paths are correct and that the required files, including the IFC model and Excel spreadsheet, are present in the specified locations.
 
